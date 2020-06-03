@@ -1,4 +1,6 @@
 <script>
+	import ContactCard from './ContactCard.svelte';
+
 	let name = 'Ayesha';
 	let age = 24;
 
@@ -38,7 +40,8 @@
 
 	<!--Two Way Binding- change value of age when name is Jownally or only change name value-->
 	<input type="text" bind:value="{name}">
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+	
+	<ContactCard />
 </main>
 
 <style>
