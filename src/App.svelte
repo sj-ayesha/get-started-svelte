@@ -35,6 +35,7 @@
   }
 
   function addContact() {
+	//   event.preventDefault();
     if (
       name.trim().length == 0 ||
       title.trim().length == 0 ||
@@ -57,9 +58,9 @@
     formState = "done";
   }
 
-  function deleteFirst() {
-	  createdContacts = createdContacts.slice(1);
-  }
+//   function deleteFirst() {
+// 	  createdContacts = createdContacts.slice(1);
+//   }
 
   function deleteLast() {
 	  createdContacts = createdContacts.slice(0, -1);
@@ -86,7 +87,7 @@
 </style>
 
 <main>
-  <div id="form">
+  <form id="form">
     <div class="form-control">
       <label for="username">Username</label>
       <input type="text" bind:value={name} id="username" />
@@ -106,11 +107,12 @@
       <label for="description">Description</label>
       <textarea rows="3" bind:value={description} id="description" />
     </div>
-
-    <button on:click={addContact}>Add Contact</button>
-	<button on:click={deleteFirst}>Delete First</button>
+	<!--event modifiers to event like once will allow trigger of function only once-->
+    <button on:click|preventDefault={addContact} type="submit">Add Contact</button>
+  </form>
+  <!--Inline functions-->
+  	<button on:click="{event => { createdContacts = createdContacts.slice(1); }}">Delete First</button>
 	<button on:click={deleteLast}>Delete Last</button>
-  </div>
   <!-- <h1>Hello {uppercaseName}, my age is {age}!</h1>
 	<button on:click="{incrementAge}">Change Age</button> -->
   <!-- <button on:click="{changeName}">Change Name</button> -->
