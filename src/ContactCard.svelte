@@ -1,3 +1,9 @@
+<script>
+    export let username;
+    export let jobTitle;
+    export let description;
+    export let userImage;
+</script>
 <style>
 	.contact-card {
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
@@ -15,6 +21,10 @@
     .thumb {
         width: 33%;
         height: 100%;
+    }
+
+    .thumb-placeholder {
+        background-color: #ccc
     }
 
     img {
@@ -49,16 +59,18 @@
 
 <div class="contact-card">
   <header>
-    <div class="thumb">
-        <img src="" alt="">
+    <!--Dynamic css classes-->
+    <div class="thumb" class:thumb-placeholder="{!userImage}">
+        <img src="{userImage}" alt="{username}">
     </div>
 
     <div class="user-data">
-      <h1>User Name</h1>
-      <h2>Job Title</h2>
+      <h1>{username}</h1>
+      <h2>{jobTitle}</h2>
     </div>
   </header>
   <div class="description">
-    <p>A short description</p>
+    <!--Outputting html e.g <strong>-->
+    <p>{@html description}</p>
   </div>
 </div>

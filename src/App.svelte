@@ -2,6 +2,9 @@
 	import ContactCard from './ContactCard.svelte';
 
 	let name = 'Ayesha';
+	let title = '';
+	let image = '';
+	let description = '';
 	let age = 24;
 
 	// Reactive Variables
@@ -40,8 +43,13 @@
 
 	<!--Two Way Binding- change value of age when name is Jownally or only change name value-->
 	<input type="text" bind:value="{name}">
+	<input type="text" bind:value="{title}">
+	<!---Deeper into Bindings-->
+	<input type="text" bind:value="{image}">
+	<textarea rows="3" bind:value="{description}"></textarea>
 	
-	<ContactCard />
+	<!--Props components-->
+	<ContactCard username="{name}" jobTitle="{title}" description="{description}" userImage="{image}"/>
 </main>
 
 <style>
