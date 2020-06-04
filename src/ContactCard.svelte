@@ -3,6 +3,8 @@
     export let jobTitle;
     export let description;
     export let userImage;
+
+    const initialName = username;
 </script>
 <style>
 	.contact-card {
@@ -65,7 +67,7 @@
     </div>
 
     <div class="user-data">
-      <h1>{username}</h1>
+      <h1>{username} / {initialName}</h1>
       <h2>{jobTitle}</h2>
     </div>
   </header>

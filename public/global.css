@@ -43,6 +43,15 @@ input:disabled {
 	color: #ccc;
 }
 
+input:focus, textarea:focus {
+	border-color: red;
+	outline: none;
+}
+
+.form-control {
+	padding: 0.5rem 0;
+}
+
 input[type="range"] {
 	height: 0;
 }
